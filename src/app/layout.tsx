@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/page";
 
- const geistSans = localFont({
+// Ensure fonts are defined if you are using them
+const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
@@ -27,9 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      
+        style={{
+          fontFamily: 'var(--font-geist-sans)', // Using the font in the body
+        }}
       >
-        <Navbar/> 
+        <Navbar />
         {children}
       </body>
     </html>
